@@ -26,5 +26,12 @@ public class DemoController {
 		return mongoService.readData();
 
 	}
+	
+	@GetMapping("/count")
+	public ResponseEntity<?> getItemCount() {
+
+		return mongoService.getCounts();
+
+	}
 
 }
