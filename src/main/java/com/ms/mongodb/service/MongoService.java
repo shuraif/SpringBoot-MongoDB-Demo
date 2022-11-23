@@ -40,4 +40,10 @@ public class MongoService {
 		return new ResponseEntity<>(items, HttpStatus.ACCEPTED);
 	}
 
+	public ResponseEntity<?> getCounts() {
+		
+		long count = groceryItemRepo.count();
+		return new ResponseEntity<>(count, HttpStatus.ACCEPTED);
+	}
+
 }
