@@ -1,8 +1,10 @@
 package com.ms.mongodb.controller;
 
+import com.ms.mongodb.model.GroceryItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ms.mongodb.service.MongoService;
@@ -14,9 +16,9 @@ public class DemoController {
 	MongoService mongoService;
 
 	@GetMapping("/insertobjects")
-	public ResponseEntity<?> createObjects() {
+	public ResponseEntity<?> createObjects(@RequestBody GroceryItem item) {
 
-		return mongoService.insertData();
+		return mongoService.insertData(item);
 
 	}
 
